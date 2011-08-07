@@ -23,6 +23,9 @@ else
 	DIR_DEVELOP=/home/$USERNAME/develop 
 fi
 
+echo "******************************************************************"
+echo "BEGIN REMOVING LANGAUGES"
+
 # NOTE: BleachBit does NOT remove languages from /usr/share/antiX/localisation
 rm -r /usr/share/antiX/localisation/ar
 rm -r /usr/share/antiX/localisation/bg
@@ -75,5 +78,8 @@ bleachbit --delete system.localizations
 
 # Remove all languages other than English (over 200MB on hard drive)
 bleachbit cli --preset -d
+
+echo "FINISHED REMOVING LANGAUGES"
+echo "******************************************************************"
 
 exit 0
